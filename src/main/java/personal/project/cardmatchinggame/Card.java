@@ -1,5 +1,7 @@
 package personal.project.cardmatchinggame;
 
+import javafx.scene.image.Image;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -73,5 +75,17 @@ public class Card {
     public int getValue()
     {
         return getValidFaceNames().indexOf(faceName) + 2;
+    }
+
+    /**
+     * Returns an image that represents the card
+     */
+    public Image getImage() {
+        String pathName = "images/"+faceName+"_of_"+suit+".png";
+        return new Image(Card.class.getResourceAsStream(pathName));
+    }
+
+    public Image getBackOfCardImage() {
+        return new Image(Card.class.getResourceAsStream("images/back_of_card.png"));
     }
 }
